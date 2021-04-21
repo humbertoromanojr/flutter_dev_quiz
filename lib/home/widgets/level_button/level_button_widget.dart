@@ -8,26 +8,26 @@ class LevelButtonWidget extends StatelessWidget {
   LevelButtonWidget({
     Key key,
     @required this.labelLevel,
-  })  : assert(["Fácil", "Médio", "Difícil", "Perito"].contains(labelLevel)),
+  })  : assert(["Easy", "Average", "Difficult", "Expert"].contains(labelLevel)),
         super(key: key);
 
   final config = {
-    "Fácil": {
+    "Easy": {
       "color": AppColors.levelButtonFacil,
       "borderColor": AppColors.levelButtonBorderFacil,
       "fontColor": AppColors.levelButtonTextFacil,
     },
-    "Médio": {
+    "Average": {
       "color": AppColors.levelButtonMedio,
       "borderColor": AppColors.levelButtonBorderMedio,
       "fontColor": AppColors.levelButtonTextMedio,
     },
-    "Difícil": {
+    "Difficult": {
       "color": AppColors.levelButtonDificil,
       "borderColor": AppColors.levelButtonBorderDificil,
       "fontColor": AppColors.levelButtonTextDificil,
     },
-    "Perito": {
+    "Expert": {
       "color": AppColors.levelButtonPerito,
       "borderColor": AppColors.levelButtonBorderPerito,
       "fontColor": AppColors.levelButtonTextPerito,
@@ -47,11 +47,11 @@ class LevelButtonWidget extends StatelessWidget {
               BorderSide(color: borderColor)),
           borderRadius: BorderRadius.circular(28)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
         child: Text(labelLevel,
             style: GoogleFonts.notoSans(
               color: fontColor,
-              fontSize: 15,
+              fontSize: 14,
             )),
       ),
     );

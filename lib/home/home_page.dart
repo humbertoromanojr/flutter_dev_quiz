@@ -18,18 +18,18 @@ class _HomePageState extends State<HomePage> {
          padding: const EdgeInsets.symmetric(horizontal: 20),
          child: Row(
            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
+           children: [  
               LevelButtonWidget(
-                labelLevel: "Fácil",
+                labelLevel: "Easy",
               ),
               LevelButtonWidget(
-                labelLevel: "Médio",
+                labelLevel: "Average",
               ),
               LevelButtonWidget(
-                labelLevel: "Difícil",
+                labelLevel: "Difficult",
               ),
               LevelButtonWidget(
-                labelLevel: "Perito",
+                labelLevel: "Expert",
               ),
            ],
          ),
