@@ -14,9 +14,26 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBarWidget(),
-       body: LevelButtonWidget(
-         labelLevel: "Fácil",
-       ),
+       body: Padding(
+         padding: const EdgeInsets.symmetric(horizontal: 20),
+         child: Row(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: [
+              LevelButtonWidget(
+                labelLevel: "Fácil",
+              ),
+              LevelButtonWidget(
+                labelLevel: "Médio",
+              ),
+              LevelButtonWidget(
+                labelLevel: "Difícil",
+              ),
+              LevelButtonWidget(
+                labelLevel: "Perito",
+              ),
+           ],
+         ),
+       )
     );
   }
 }
