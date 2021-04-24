@@ -18,7 +18,7 @@ class AwnserModel {
   factory AwnserModel.fromMap(Map<String, dynamic> map) {
     return AwnserModel(
       title: map['title'],
-      isRight: map['isRight'],
+      isRight: map['isRight'] ?? false,
     );
   }
 

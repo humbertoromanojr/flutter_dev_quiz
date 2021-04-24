@@ -2,6 +2,7 @@ import 'package:dev_quiz/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class LevelButtonWidget extends StatelessWidget {
   String labelLevel;
 
