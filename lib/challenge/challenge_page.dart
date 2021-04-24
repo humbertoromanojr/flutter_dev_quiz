@@ -51,6 +51,7 @@ class _ChallengePageState extends State<ChallengePage> {
         ),
       ),
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: widget.questions.map((e) => QuizWidget(question: e)).toList(),
       ),
