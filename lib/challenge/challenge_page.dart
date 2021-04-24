@@ -17,6 +17,7 @@ class ChallengePage extends StatefulWidget {
 
 class _ChallengePageState extends State<ChallengePage> {
   final controller = ChallengeController();
+  final pageController = PageController();
 
   @override
   void initState() {
@@ -24,6 +25,10 @@ class _ChallengePageState extends State<ChallengePage> {
 
     controller.currentPageNotifier.addListener(() {
       setState(() {});
+    });
+
+    pageController.addListener(() {
+      controller.currentPage = pageController.page.toInt();
     });
   }
 
@@ -39,7 +44,7 @@ class _ChallengePageState extends State<ChallengePage> {
             children: [
               BackButton(),
               QuestionIndicatorWidget(
-                currentPage: controller.currentpage,
+                currentPage: controller.currentPage,
                 length: widget.questions.length,
               ),
             ],
@@ -47,6 +52,7 @@ class _ChallengePageState extends State<ChallengePage> {
         ),
       ),
       body: PageView(
+        controller: pageController,
         children: widget.questions.map((e) => QuizWidget(question: e)).toList(),
       ),
       bottomNavigationBar: SafeArea(
