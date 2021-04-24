@@ -23,10 +23,6 @@ class _ChallengePageState extends State<ChallengePage> {
   void initState() {
     super.initState();
 
-    controller.currentPageNotifier.addListener(() {
-      setState(() {});
-    });
-
     pageController.addListener(() {
       controller.currentPage = pageController.page.toInt() + 1;
     });
@@ -43,9 +39,12 @@ class _ChallengePageState extends State<ChallengePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BackButton(),
-              QuestionIndicatorWidget(
-                currentPage: controller.currentPage,
+              ValueListenableBuilder<int>(
+                valueListenable: controller.currentPageNotifier, 
+                builder: (context, value, _) => QuestionIndicatorWidget(
+                currentPage: value,
                 length: widget.questions.length,
+              ),
               ),
             ],
           ),
