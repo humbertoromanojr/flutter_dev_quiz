@@ -40,11 +40,11 @@ class _ChallengePageState extends State<ChallengePage> {
             children: [
               BackButton(),
               ValueListenableBuilder<int>(
-                valueListenable: controller.currentPageNotifier, 
+                valueListenable: controller.currentPageNotifier,
                 builder: (context, value, _) => QuestionIndicatorWidget(
-                currentPage: value,
-                length: widget.questions.length,
-              ),
+                  currentPage: value,
+                  length: widget.questions.length,
+                ),
               ),
             ],
           ),
@@ -63,7 +63,13 @@ class _ChallengePageState extends State<ChallengePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
-                  child: NextButtonWidget.white(label: "Pular", onTap: () {})),
+                  child: NextButtonWidget.white(
+                      label: "Pular",
+                      onTap: () {
+                        pageController.nextPage(
+                            duration: Duration(seconds: 1),
+                            curve: Curves.elasticIn);
+                      })),
               SizedBox(width: 10),
               Expanded(
                   child:
