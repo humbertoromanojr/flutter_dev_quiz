@@ -29,7 +29,10 @@ class _ChallengePageState extends State<ChallengePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BackButton(),
-              QuestionIndicatorWidget(),
+              QuestionIndicatorWidget(
+                currentPage: controller.currentpage,
+                length: widget.questions.length,
+              ),
             ],
           ),
         ),
