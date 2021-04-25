@@ -26,9 +26,14 @@ class _QuizWidgetState extends State<QuizWidget> {
           SizedBox(height: 64),
           Text(widget.question.title, style: AppTextStyles.heading),
           SizedBox(height: 24),
-          for(var i = 0; i < widget.question.awnsers.length; i++)
+          for (var i = 0; i < widget.question.awnsers.length; i++)
             AwnserWidget(
               awnser: awnser(i),
+              isSelected: indexSelected == i,
+              onTap: () {
+                indexSelected = i;
+                setState(() {});
+              },
             ),
         ],
       ),
