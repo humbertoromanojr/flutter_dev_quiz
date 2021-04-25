@@ -29,6 +29,7 @@ class _QuizWidgetState extends State<QuizWidget> {
           for (var i = 0; i < widget.question.awnsers.length; i++)
             AwnserWidget(
               awnser: awnser(i),
+              disabled: indexSelected != -1,
               isSelected: indexSelected == i,
               onTap: () {
                 indexSelected = i;
