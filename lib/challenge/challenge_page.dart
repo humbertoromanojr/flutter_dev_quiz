@@ -9,8 +9,13 @@ import 'package:dev_quiz/challenge/widgets/quiz/quiz_widget.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
+  final String title;
 
-  ChallengePage({Key key, @required this.questions}) : super(key: key);
+  ChallengePage({
+    Key key, 
+    @required this.questions, 
+    @required this.title
+  }) : super(key: key);
 
   @override
   _ChallengePageState createState() => _ChallengePageState();
@@ -31,9 +36,8 @@ class _ChallengePageState extends State<ChallengePage> {
 
   void nextPage() {
     if (controller.currentPage < widget.questions.length)
-
-    pageController.nextPage(
-        duration: Duration(seconds: 1), curve: Curves.elasticIn);
+      pageController.nextPage(
+          duration: Duration(seconds: 1), curve: Curves.elasticIn);
   }
 
   @override
@@ -76,17 +80,21 @@ class _ChallengePageState extends State<ChallengePage> {
                     children: [
                       if (value < widget.questions.length)
                         Expanded(
-                          child: NextButtonWidget.white(
-                            label: "Pular", onTap: nextPage)
-                          ),
-                      
+                            child: NextButtonWidget.white(
+                                label: "Pular", onTap: nextPage)),
                       if (value == widget.questions.length)
                         Expanded(
                             child: NextButtonWidget.green(
                           label: "Confirmar",
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage())
-                            );
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ResultPage(
+                                  title: widget.title,
+                                  length: widget.questions.length,
+                                ))
+                              );
                           },
                         )),
                     ],

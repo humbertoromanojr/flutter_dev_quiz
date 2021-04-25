@@ -4,7 +4,14 @@ import 'package:dev_quiz/core/core.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({Key key}) : super(key: key);
+  final String title;
+  final int length;
+
+  const ResultPage({
+    Key key, 
+    @required this.title, 
+    @required this.length
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,40 +34,42 @@ class ResultPage extends StatelessWidget {
                       style: AppTextStyles.body,
                       children: [
                         TextSpan(
-                            text: "\nGerenciamento de Estado ",
-                            style: AppTextStyles.bodyBold),
+                            text: "\n$title ", style: AppTextStyles.bodyBold),
                         TextSpan(
-                            text: "\ncom 6/10 acertos.", style: AppTextStyles.body),
+                            text: "\ncom 6 de $length acertos.",
+                            style: AppTextStyles.body),
                       ]),
                   textAlign: TextAlign.center,
                 ),
               ],
             ),
-            Column(children: [
-              Row(
+            Column(
               children: [
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 68),
-                  child: NextButtonWidget.purple(
-                      label: "Compartilhar", onTap: () {}),
-                )),
-              ],
-            ),
-            SizedBox(height: 30),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 68),
-                  child: NextButtonWidget.transparent(
-                      label: "Voltar ao início",
-                      onTap: () {
-                        Navigator.pop(context);
-                      }),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 68),
+                      child: NextButtonWidget.purple(
+                          label: "Compartilhar", onTap: () {}),
+                    )),
+                  ],
+                ),
+                SizedBox(height: 30),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 68),
+                      child: NextButtonWidget.transparent(
+                          label: "Voltar ao início",
+                          onTap: () {
+                            Navigator.pop(context);
+                          }),
+                    ),
+                  ],
                 ),
               ],
-            ),
-            ],)
+            )
           ],
         ),
       ),
