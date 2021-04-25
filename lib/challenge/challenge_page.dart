@@ -29,6 +29,8 @@ class _ChallengePageState extends State<ChallengePage> {
   }
 
   void nextPage() {
+    if (controller.currentPage < widget.questions.length)
+
     pageController.nextPage(
         duration: Duration(seconds: 1), curve: Curves.elasticIn);
   }
@@ -71,10 +73,12 @@ class _ChallengePageState extends State<ChallengePage> {
               builder: (context, value, _) => Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Expanded(
+                      if (value < widget.questions.length)
+                        Expanded(
                           child: NextButtonWidget.white(
-                              label: "Pular", onTap: nextPage)),
-                      if (value == widget.questions.length) SizedBox(width: 7),
+                            label: "Pular", onTap: nextPage)
+                          ),
+                      
                       if (value == widget.questions.length)
                         Expanded(
                             child: NextButtonWidget.green(
