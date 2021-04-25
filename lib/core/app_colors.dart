@@ -9,6 +9,7 @@ class AppColors {
   static final Color border = Color(0xFFE1E1E6);
   static final Color chartSecondary = Color(0xFFE1E6E3);
   static final Color chartPrimary = darkGreen;
+  static final Color transparent = Colors.transparent;
 
   //Greens
   static final Color lightGreen = Color(0xFFE1F5EC);
