@@ -7,14 +7,14 @@ class AwnserWidget extends StatelessWidget {
   final AwnserModel awnser;
   final bool isSelected;
   final bool disabled;
-  final VoidCallback onTap;
+  final ValueChanged<bool> onTap;
 
   const AwnserWidget({
     Key key,
     @required this.awnser,
     @required this.onTap,
     this.disabled = false,
-    this.isSelected = false, 
+    this.isSelected = false,
   }) : super(key: key);
 
   Color get _selectedColorRight =>
@@ -41,15 +41,18 @@ class AwnserWidget extends StatelessWidget {
       child: IgnorePointer(
         ignoring: disabled,
         child: GestureDetector(
-          onTap: onTap,
+          onTap: () {
+            onTap(awnser.isRight);
+          },
           child: Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: isSelected ? _selectedColorCardRight : AppColors.white,
               borderRadius: BorderRadius.circular(10),
               border: Border.fromBorderSide(BorderSide(
-                  color:
-                      isSelected ? _selectedBorderCardRight : AppColors.border)),
+                  color: isSelected
+                      ? _selectedBorderCardRight
+                      : AppColors.border)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

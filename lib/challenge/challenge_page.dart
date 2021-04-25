@@ -11,11 +11,8 @@ class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
   final String title;
 
-  ChallengePage({
-    Key key, 
-    @required this.questions, 
-    @required this.title
-  }) : super(key: key);
+  ChallengePage({Key key, @required this.questions, @required this.title})
+      : super(key: key);
 
   @override
   _ChallengePageState createState() => _ChallengePageState();
@@ -38,6 +35,13 @@ class _ChallengePageState extends State<ChallengePage> {
     if (controller.currentPage < widget.questions.length)
       pageController.nextPage(
           duration: Duration(seconds: 1), curve: Curves.elasticIn);
+  }
+
+  void onSelected(bool value) {
+    if (value) {
+      controller.qtdAnwserRight++;
+    }
+    nextPage();
   }
 
   @override
@@ -66,7 +70,10 @@ class _ChallengePageState extends State<ChallengePage> {
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         children: widget.questions
-            .map((e) => QuizWidget(question: e, onChange: nextPage))
+            .map((e) => QuizWidget(
+                  question: e,
+                  onSelected: onSelected,
+                ))
             .toList(),
       ),
       bottomNavigationBar: SafeArea(
@@ -88,13 +95,13 @@ class _ChallengePageState extends State<ChallengePage> {
                           label: "Confirmar",
                           onTap: () {
                             Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ResultPage(
-                                  title: widget.title,
-                                  length: widget.questions.length,
-                                ))
-                              );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResultPage(
+                                      result: controller.qtdAnwserRight,
+                                      title: widget.title,
+                                      length: widget.questions.length,
+                                    )));
                           },
                         )),
                     ],
