@@ -10,10 +10,10 @@ class ResultPage extends StatelessWidget {
   final int result;
 
   const ResultPage({
-    Key key, 
-    @required this.title, 
-    @required this.length, 
-    @required this.result
+    Key? key, 
+    required this.title, 
+    required this.length, 
+    required this.result
     }) : super(key: key);
 
   @override

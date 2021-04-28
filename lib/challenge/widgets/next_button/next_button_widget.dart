@@ -11,37 +11,37 @@ class NextButtonWidget extends StatelessWidget {
   final VoidCallback onTap;
 
   const NextButtonWidget(
-      {Key key,
-      @required this.label,
-      @required this.backgroundColor,
-      @required this.fontColor,
-      @required this.borderColor,
-      @required this.onTap})
+      {Key? key,
+      required this.label,
+      required this.backgroundColor,
+      required this.fontColor,
+      required this.borderColor,
+      required this.onTap})
       : super(key: key);
 
   // named constructor
-  NextButtonWidget.green({@required String label, @required VoidCallback onTap})
+  NextButtonWidget.green({required String label, required VoidCallback onTap})
       : this.label = label,
         this.onTap = onTap,
         this.backgroundColor = AppColors.darkGreen,
         this.borderColor = AppColors.darkGreen,
         this.fontColor = AppColors.white;
 
-  NextButtonWidget.white({@required String label, @required VoidCallback onTap})
+  NextButtonWidget.white({required String label, required VoidCallback onTap})
       : this.label = label,
         this.onTap = onTap,
         this.backgroundColor = AppColors.white,
         this.borderColor = AppColors.border,
         this.fontColor = AppColors.grey;
 
-  NextButtonWidget.purple({@required String label, @required VoidCallback onTap})
+  NextButtonWidget.purple({required String label, required VoidCallback onTap})
       : this.label = label,
         this.onTap = onTap,
         this.backgroundColor = AppColors.purple,
         this.borderColor = AppColors.border,
         this.fontColor = AppColors.white;
 
-  NextButtonWidget.transparent({@required String label, @required VoidCallback onTap})
+  NextButtonWidget.transparent({required String label, required VoidCallback onTap})
     : this.label = label,
       this.onTap = onTap,
       this.backgroundColor = AppColors.transparent,

@@ -10,9 +10,9 @@ class AwnserWidget extends StatelessWidget {
   final ValueChanged<bool> onTap;
 
   const AwnserWidget({
-    Key key,
-    @required this.awnser,
-    @required this.onTap,
+    Key? key,
+    required this.awnser,
+    required this.onTap,
     this.disabled = false,
     this.isSelected = false,
   }) : super(key: key);

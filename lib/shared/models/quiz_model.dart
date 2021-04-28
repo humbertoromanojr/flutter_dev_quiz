@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 
 import 'package:dev_quiz/shared/models/question_model.dart';
 
@@ -11,31 +10,31 @@ extension LevelStrtingExt on String {
     "medio": Level.medio,
     "dificil": Level.dificil,
     "perito": Level.perito,
-  }[this]; // not null [this]!
+  }[this]!; // not null [this]!
 }
 
-extension LevelExt on Level {
+extension LevelExt on Level? {
   String get parse => {
     Level.facil: "facil",
     Level.medio: "medio",
     Level.dificil: "dificil",
     Level.perito: "perito",
-  }[this]; // not null [this]!
+  }[this]!; // not null [this]!
 }
 
 class QuizModel {
   final String title;
   final List<QuestionModel> questions;
-  final int questionAnswered;
-  final String imagem;
-  final Level level;
+  final int? questionAnswered;
+  final String? imagem;
+  final Level? level;
 
   QuizModel({
-    @required this.title,
-    @required this.questions,
+    required this.title,
+    required this.questions,
     this.questionAnswered = 0,
-    @required this.imagem,
-    @required this.level,
+    required this.imagem,
+    required this.level,
   });
 
   Map<String, dynamic> toMap() {

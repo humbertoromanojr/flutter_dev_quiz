@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ChartWidget extends StatefulWidget {
   final double percent;
 
-  const ChartWidget({Key key, @required this.percent}) : super(key: key);
+  const ChartWidget({Key? key, required this.percent}) : super(key: key);
 
   @override
   _ChartWidgetState createState() => _ChartWidgetState();
@@ -13,24 +13,22 @@ class ChartWidget extends StatefulWidget {
 
 class _ChartWidgetState extends State<ChartWidget>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
+  late AnimationController _controller;
+  late Animation<double> _animation;
 
   void _initAnimation() {
     _controller =
         AnimationController(vsync: this, duration: Duration(seconds: 3));
-
     _animation =
         Tween<double>(begin: 0.0, end: widget.percent).animate(_controller);
-
     _controller.forward();
   }
 
   @override
   void initState() {
-    super.initState();
-
     _initAnimation();
+
+    super.initState();
   }
 
   @override
@@ -38,9 +36,7 @@ class _ChartWidgetState extends State<ChartWidget>
     return Container(
       height: 80,
       width: 80,
-      child: AnimatedBuilder(
-        animation: _animation,
-        builder: (context, _) => Stack(
+      child: Stack(
         children: [
           Center(
             child: Container(
@@ -63,7 +59,6 @@ class _ChartWidgetState extends State<ChartWidget>
           )
         ],
       ),
-      )
     );
   }
 }

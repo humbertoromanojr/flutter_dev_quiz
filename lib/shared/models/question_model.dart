@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'awnser_model.dart';
 
 class QuestionModel {
@@ -7,8 +6,8 @@ class QuestionModel {
   final List<AwnserModel> awnsers;
 
   QuestionModel({
-    @required this.title,
-    @required this.awnsers,
+    required this.title,
+    required this.awnsers,
   }) : assert(awnsers.length == 4);
 
   Map<String, dynamic> toMap() {
@@ -22,7 +21,7 @@ class QuestionModel {
     return QuestionModel(
       title: map['title'],
       awnsers: List<AwnserModel>.from(
-          map['awnsers'].map((x) => AwnserModel.fromMap(x))),
+          map['awnsers']?.map((x) => AwnserModel.fromMap(x))),
     );
   }
 

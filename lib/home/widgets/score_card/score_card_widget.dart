@@ -7,9 +7,8 @@ class ScoreCardWidget extends StatelessWidget {
   final double percent;
 
   const ScoreCardWidget({
-    Key key, 
-    @required
-   this.percent
+    Key? key, 
+    required this.percent
   }) : super(key: key);
 
   @override
@@ -25,7 +24,7 @@ class ScoreCardWidget extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(flex: 1, child: ChartWidget(percent: percent,)),
+              Expanded(flex: 1, child: ChartWidget(percent: percent)),
               Expanded(
                 flex: 3,
                 child: Padding(

@@ -11,7 +11,7 @@ class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
   final String title;
 
-  ChallengePage({Key key, @required this.questions, @required this.title})
+  ChallengePage({Key? key, required this.questions, required this.title})
       : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class _ChallengePageState extends State<ChallengePage> {
     super.initState();
 
     pageController.addListener(() {
-      controller.currentPage = pageController.page.toInt() + 1;
+      controller.currentPage = pageController.page!.toInt() + 1;
     });
   }
 

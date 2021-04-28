@@ -5,17 +5,17 @@ import 'package:dev_quiz/shared/widgets/progress_indicator/progress_indicator_wi
 import 'package:flutter/material.dart';
 
 class QuizCardWidget extends StatelessWidget {
-  final String title;
+  final String? title;
   final String completed;
   final double percent;
   final VoidCallback onTap;
 
   const QuizCardWidget({
-    Key key,
-    @required this.title,
-    @required this.completed,
-    @required this.percent,
-    @required this.onTap,
+    Key? key,
+    required this.title,
+    required this.completed,
+    required this.percent,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -38,7 +38,7 @@ class QuizCardWidget extends StatelessWidget {
                 height: 40, width: 40, child: Image.asset(AppImages.blocks)),
             SizedBox(height: 20),
             Text(
-              title,
+              title!,
               style: AppTextStyles.heading15,
             ),
             SizedBox(height: 20),

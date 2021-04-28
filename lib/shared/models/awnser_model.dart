@@ -1,12 +1,10 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-
 class AwnserModel {
   final String title;
   final bool isRight;
 
-  AwnserModel({ @required this.title, this.isRight = false, });
+  AwnserModel({ required this.title, this.isRight = false });
 
   Map<String, dynamic> toMap() {
     return {
@@ -24,5 +22,6 @@ class AwnserModel {
 
   String toJson() => json.encode(toMap());
 
-  factory AwnserModel.fromJson(String source) => AwnserModel.fromMap(json.decode(source));
+  factory AwnserModel.fromJson(String source) => 
+  AwnserModel.fromMap(json.decode(source));
 }

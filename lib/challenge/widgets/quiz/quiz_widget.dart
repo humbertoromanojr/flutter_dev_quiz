@@ -9,9 +9,9 @@ class QuizWidget extends StatefulWidget {
   final ValueChanged<bool> onSelected;
 
   const QuizWidget({
-    Key key, 
-    @required this.question, 
-    @required this.onSelected
+    Key? key, 
+    required this.question, 
+    required this.onSelected
   }) : super(key: key);
 
   @override
