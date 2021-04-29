@@ -34,7 +34,7 @@ Copy project
 ## Demonstration app
 
 <br>
-  <img src="" alt="Dev Quiz" border="0">
+  <img src="https://i.ibb.co/TrJbmtq/dev-quiz.png" alt="dev-quiz" border="0">
 <br>
 
 ## License
