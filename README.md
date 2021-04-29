@@ -1,12 +1,9 @@
 <h1 align="center">
   <img src="https://i.ibb.co/BZvfscY/logo.png" alt="logo" border="0">
-<br />
-<br />
-DEVQUIZ
 </h1>
 
 
-> Status Project: Complete :warning: => 
+> Status Project: Complete 👍 => 
 > :guitar: JR Dev :guitar:
 
 
