@@ -35,7 +35,7 @@ Copy project
 
 <img src="https://i.ibb.co/TrJbmtq/dev-quiz.png" alt="dev-quiz" border="0">
 <br />
-<img src="https://i.ibb.co/5LgFxpM/dev-quiz05.gif" alt="dev-quiz animation" border="0">
+<img src="https://i.ibb.co/Mfzh1zH/dev-quiz05.gif" alt="dev-quiz05" border="0">
 
 
 ## License
