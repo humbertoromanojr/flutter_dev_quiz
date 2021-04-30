@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://i.ibb.co/BZvfscY/logo.png" alt="logo" border="0">
+  DEV QUIZ
 </h1>
 
 
