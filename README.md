@@ -33,10 +33,11 @@ Copy project
 
 ## Demonstration app
 
-<img src="https://i.ibb.co/TrJbmtq/dev-quiz.png" alt="dev-quiz" border="0">
-<br />
-<img src="https://i.ibb.co/Mfzh1zH/dev-quiz05.gif" alt="dev-quiz05" border="0">
-
+<h2 align="center">
+  <img src="https://i.ibb.co/TrJbmtq/dev-quiz.png" alt="dev-quiz" border="0">
+  <br />
+  <img src="https://i.ibb.co/kDkvPB2/dev-quiz5.gif" alt="dev-quiz5" border="0">
+</h2>
 
 ## License
 
