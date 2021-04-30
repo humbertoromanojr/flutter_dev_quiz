@@ -26,10 +26,21 @@
 :dart: [google_fonts](https://pub.dev/packages/google_fonts) <br>
 :dart: [share_plus](https://pub.dev/packages/share_plus) <br>
 
+
 ## Install project
 
-Copy project
+Copy project to repository
 `git clone https://github.com/humbertoromanojr/flutter_dev_quiz`
+
+Installation node_modules
+`npm or yarn install`
+
+Start Bundle
+`npm or yarn start`
+
+Start application
+`npm or yarn android or ios`
+
 
 ## Demonstration app
 
